@@ -47,6 +47,18 @@ Beautiful, purpose-built themes designed specifically for the GNOME desktop envi
 | **Lavanda** | Purple-native elegance | [Install Script](linux-native-themes/lavanda-theme-install.sh) | [Full Guide](linux-native-themes/lavanda-theme-guide.md) | GTK, Shell, Icons (Tela), Cursors (Graphite), Libadwaita |
 | **Catppuccin** | Soothing pastel dark (Mocha) | [Install Script](linux-native-themes/catppuccin-theme-install.sh) | [Full Guide](linux-native-themes/catppuccin-theme-guide.md) | GTK, Shell, Icons (Catppuccin), Cursors (Catppuccin), Libadwaita |
 
+## Theme Switcher TUI
+
+Tired of running scripts every time you want to switch themes? Install the **[GNOME Theme Switcher](https://github.com/Naftaliro/gnome-theme-switcher)** — a terminal-based UI that lets you browse, install, and switch between all 9 themes (plus your own custom themes) with a single keypress.
+
+```bash
+# Install the theme switcher
+curl -fsSL https://raw.githubusercontent.com/Naftaliro/gnome-theme-switcher/main/install.sh | bash
+
+# Run it
+gnome-theme-switcher
+```
+
 ## Quick Start
 
 1. Clone this repository:
