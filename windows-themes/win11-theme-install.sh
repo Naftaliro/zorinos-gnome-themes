@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 #
+# This script is provided "as is", without warranty of any kind. Use at your own risk.
+# It is not affiliated with any of the upstream theme authors.
+# For full details, see the repository's DISCLAIMER.md and LICENSE files.
+#
+#
 # Win11 (Windows 11 Style) Full System Theme Installer
 # for ZorinOS 18 Pro / Ubuntu (GNOME)
 # ──────────────────────────────────────────────────────────────────────────────
