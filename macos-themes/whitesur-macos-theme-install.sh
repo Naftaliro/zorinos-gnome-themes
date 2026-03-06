@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Naftali <https://github.com/Naftaliro>
 #
 # This script is provided "as is", without warranty of any kind. Use at your own risk.
 # It is not affiliated with any of the upstream theme authors.
@@ -15,6 +17,12 @@
 #           override, Firefox theme, and Flatpak theming.
 #
 # Designed for: ZorinOS 18 Pro (Ubuntu 24.04 base) with GNOME desktop
+#
+# Upstream projects invoked by this script:
+#   - WhiteSur GTK Theme:  https://github.com/vinceliuice/WhiteSur-gtk-theme  (MIT)
+#   - WhiteSur Icon Theme: https://github.com/vinceliuice/WhiteSur-icon-theme (GPL-3.0)
+#   - WhiteSur Cursors:    https://github.com/vinceliuice/WhiteSur-cursors    (GPL-3.0)
+#   - WhiteSur Wallpapers: https://github.com/vinceliuice/WhiteSur-wallpapers (GPL-3.0)
 # ------------------------------------------------------------------------------
 
 set -euo pipefail

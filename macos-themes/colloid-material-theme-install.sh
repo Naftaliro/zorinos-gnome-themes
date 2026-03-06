@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Naftali <https://github.com/Naftaliro>
 #
 # This script is provided "as is", without warranty of any kind. Use at your own risk.
 # It is not affiliated with any of the upstream theme authors.
@@ -15,9 +17,9 @@
 #           theming. A modern, clean Material Design look for your desktop.
 #
 # Theme suite by vinceliuice:
-#   - Colloid GTK Theme:  https://github.com/vinceliuice/Colloid-gtk-theme
-#   - Colloid Icon Theme: https://github.com/vinceliuice/Colloid-icon-theme
-#   - Colloid Cursors:    included in Colloid-icon-theme/cursors/
+#   - Colloid GTK Theme:  https://github.com/vinceliuice/Colloid-gtk-theme  (GPL-3.0)
+#   - Colloid Icon Theme: https://github.com/vinceliuice/Colloid-icon-theme (GPL-3.0)
+#   - Colloid Cursors:    included in Colloid-icon-theme/cursors/           (GPL-3.0)
 # ------------------------------------------------------------------------------
 
 set -euo pipefail

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Naftali <https://github.com/Naftaliro>
 #
 # This script is provided "as is", without warranty of any kind. Use at your own risk.
 # It is not affiliated with any of the upstream theme authors.
@@ -16,8 +18,8 @@
 #           theming. A polished Windows 11 Fluent Design look for your desktop.
 #
 # Theme suite by vinceliuice:
-#   - Fluent GTK Theme:  https://github.com/vinceliuice/Fluent-gtk-theme
-#   - Fluent Icon Theme: https://github.com/vinceliuice/Fluent-icon-theme
+#   - Fluent GTK Theme:  https://github.com/vinceliuice/Fluent-gtk-theme  (GPL-3.0)
+#   - Fluent Icon Theme: https://github.com/vinceliuice/Fluent-icon-theme (GPL-3.0)
 #   - Fluent Cursors:    included in Fluent-icon-theme/cursors/
 # ------------------------------------------------------------------------------
 

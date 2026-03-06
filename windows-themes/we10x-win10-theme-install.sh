@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Naftali <https://github.com/Naftaliro>
 #
 # This script is provided "as is", without warranty of any kind. Use at your own risk.
 # It is not affiliated with any of the upstream theme authors.
@@ -16,9 +18,9 @@
 #           theming. A faithful Windows 10 recreation for your Linux desktop.
 #
 # Theme suite by yeyushengfan258 (icons + GTK) and vinceliuice (cursors):
-#   - We10X GTK Theme:   https://github.com/yeyushengfan258/We10X-gtk-theme
-#   - We10X Icon Theme:  https://github.com/yeyushengfan258/We10X-icon-theme
-#   - Fluent Cursors:    https://github.com/vinceliuice/Fluent-icon-theme
+#   - We10X GTK Theme:   https://github.com/yeyushengfan258/We10X-gtk-theme  (GPL-3.0)
+#   - We10X Icon Theme:  https://github.com/yeyushengfan258/We10X-icon-theme (GPL-3.0)
+#   - Fluent Cursors:    https://github.com/vinceliuice/Fluent-icon-theme    (GPL-3.0)
 #
 # Usage:
 #   chmod +x we10x-win10-theme-install.sh && ./we10x-win10-theme-install.sh
