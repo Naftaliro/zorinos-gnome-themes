@@ -1,11 +1,11 @@
-# SHA-256 Checksums for zorinos-gnome-themes v1.0.0
+# SHA-256 Checksums for zorinos-gnome-themes v1.1.0
 # Verify with: sha256sum -c SHA256SUMS.txt
-fba45e94b77a82f1d8cbe721231bbc0e8ec401e533d486fd977ff98e584fc20f  macos-themes/colloid-material-theme-install.sh
-d405c96e7288e038d3a795b6290707cff2da589135171e22eadc89c708181a9c  macos-themes/whitesur-macos-theme-install.sh
-85dd7870bbbc3657680bff3dd39952f6f280e065aa8b1bfb6efc79171372f8f7  windows-themes/fluent-win11-theme-install.sh
-ad17c43bcd5eb87ad4f463f91a5be180c50eb58d35e72dadaf31509a15ba549e  windows-themes/we10x-win10-theme-install.sh
-fb6aaf16abe0b0ff016c3dce9f02a00afbf81a3fe4cfe05852955bc6f678c649  windows-themes/win11-theme-install.sh
-7252bc1e7d1746bb78c2b2f434dd636321cd8aab7069f93dce92612dad46d65c  linux-native-themes/catppuccin-theme-install.sh
-49e8963413e4b0f6b2ba81a3263e1fdc69e767f4a28b6b205e177205e0354b80  linux-native-themes/graphite-theme-install.sh
-8f160b4859b3af2d5166967fd576721bed2acfffbd55f320db52c512d98bffdc  linux-native-themes/lavanda-theme-install.sh
-7d25881dce5cbb06bc2992ea2b113a4f85cfd3f6d0f5cc3c63ce2a0d89b3e430  linux-native-themes/orchis-theme-install.sh
+1ec20b22bf568b87ed986ba6a9411614fdff07b518b1ae32127b51c15cd516f7  macos-themes/colloid-material-theme-install.sh
+07cf8af636949f507219b83220cb2771f8fd10e00d53c9fefaf87877f444ca55  macos-themes/whitesur-macos-theme-install.sh
+221cccc69c696fca66e0b61af945f01b5ee52229cdf8338605e2b04f20067034  windows-themes/fluent-win11-theme-install.sh
+79e6e48e2df9f7a85116cab0f9e14ffc73c49313d11e520a6a907e9268fbab9d  windows-themes/we10x-win10-theme-install.sh
+19c181fa5dcb57e5d9e24b0bc2c1dfcceb6e5ff8f6dd5398bf70ac7131d25411  windows-themes/win11-theme-install.sh
+7009475f0e79e1b39eeecf2d2207e8e8310431ab8494e8c768d4e82045f3e167  linux-native-themes/catppuccin-theme-install.sh
+cd469fa5c4c6422a430d6ba0ae69c258a94434d81a6f78a44777d4b82bfbb026  linux-native-themes/graphite-theme-install.sh
+4723051cad56ff8d3a63394a1d469ecbd8708b94e30f858da541118e8520842f  linux-native-themes/lavanda-theme-install.sh
+74f420852d2aaee1e0da4ea0b8806cd66ce0fa68e89c42a6560b613c6b0d8896  linux-native-themes/orchis-theme-install.sh

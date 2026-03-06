@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Naftali <https://github.com/Naftaliro>
 #
 # This script is provided "as is", without warranty of any kind. Use at your own risk.
 # It is not affiliated with any of the upstream theme authors.
@@ -18,9 +20,9 @@
 #           purple lovers.
 #
 # Theme suite by vinceliuice:
-#   - Lavanda GTK Theme:   https://github.com/vinceliuice/Lavanda-gtk-theme
-#   - Tela Icon Theme:     https://github.com/vinceliuice/Tela-icon-theme
-#   - Graphite Cursors:    https://github.com/vinceliuice/Graphite-cursors
+#   - Lavanda GTK Theme:   https://github.com/vinceliuice/Lavanda-gtk-theme (GPL-3.0)
+#   - Tela Icon Theme:     https://github.com/vinceliuice/Tela-icon-theme    (GPL-3.0)
+#   - Graphite Cursors:    https://github.com/vinceliuice/Graphite-cursors   (GPL-3.0)
 # ------------------------------------------------------------------------------
 
 set -euo pipefail

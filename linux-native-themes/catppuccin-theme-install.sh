@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2026 Naftali <https://github.com/Naftaliro>
 #
 # This script is provided "as is", without warranty of any kind. Use at your own risk.
 # It is not affiliated with any of the upstream theme authors.
@@ -17,8 +19,8 @@
 #           beloved by the developer community.
 #
 # Theme suite:
-#   - Catppuccin GTK Theme:  https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
-#   - Catppuccin Cursors:    https://github.com/catppuccin/cursors
+#   - Catppuccin GTK Theme:  https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme (GPL-3.0)
+#   - Catppuccin Cursors:    https://github.com/catppuccin/cursors                    (GPL-2.0)
 # ------------------------------------------------------------------------------
 
 set -euo pipefail
