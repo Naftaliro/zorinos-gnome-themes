@@ -1,39 +1,21 @@
-# Disclaimer
+# Disclaimer of Liability and Warranty
 
-## No Warranty
+## 1. No Warranty
 
-This repository and all of its contents are provided **"as is"** without warranty of any kind, express or implied. The maintainer(s) of this repository make no representations or warranties regarding the accuracy, completeness, reliability, or suitability of the scripts, documentation, or any other materials contained herein.
+THE SOFTWARE AND SCRIPTS IN THIS REPOSITORY ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## No Liability
+## 2. No Affiliation
 
-In no event shall the maintainer(s) of this repository be liable for any direct, indirect, incidental, special, consequential, or exemplary damages (including, but not limited to, loss of data, system instability, or any other losses) arising out of or in connection with the use of the scripts, themes, or documentation provided in this repository.
+This repository and its maintainer are **not affiliated with, endorsed by, or sponsored by** GNOME, ZorinOS, Canonical, or any of the upstream theme authors (including but not limited to Vince Liuice, yeyushengfan258, or Catppuccin). This is an unofficial, community-driven project.
 
-**You use everything in this repository entirely at your own risk.**
+## 3. Use at Your Own Risk
 
-## Third-Party Content
+The installation scripts provided herein modify system files and settings, including running commands with `sudo` (superuser) privileges. While created with care, these scripts could potentially cause system instability, data loss, or other unintended consequences. **You assume full responsibility for any and all risks** associated with using these scripts. It is strongly recommended to review the scripts before execution.
 
-All themes, icons, cursors, and wallpapers referenced or installed by the scripts in this repository are the intellectual property of their respective authors and are governed by their own licenses (typically GPL-3.0 or MIT). This repository does not claim ownership of any third-party content. It is solely a **compilation of installation scripts and documentation** that automates the process of downloading and applying publicly available open-source themes.
+## 4. Third-Party Licenses
 
-The primary upstream theme authors include:
+This repository contains installation scripts that download and install third-party software (themes, icons, cursors) from their original sources. These third-party components are governed by their own separate licenses (e.g., GPL-2.0, GPL-3.0, MIT). The MIT license of this repository applies **only to the installation scripts themselves**, not to the themes they install. You are responsible for complying with the licenses of all downloaded components.
 
-| Author | GitHub | Themes |
-|---|---|---|
-| Vince Liuice | [vinceliuice](https://github.com/vinceliuice) | WhiteSur, Colloid, Fluent, Orchis, Graphite |
-| yeyushengfan258 | [yeyushengfan258](https://github.com/yeyushengfan258) | Win11, We10X |
+## 5. AI-Assisted Content
 
-## AI-Assisted Content
-
-The Bash installation scripts and Markdown documentation in this repository were created with the assistance of **artificial intelligence (AI)**. While every effort has been made to ensure correctness and safety, AI-generated content may contain errors or unexpected behavior. Users are encouraged to **review the scripts before executing them** on their systems.
-
-## Responsibility
-
-By using any script or guide from this repository, you acknowledge and agree that:
-
-1. You have read and understood this disclaimer.
-2. You are solely responsible for any changes made to your system.
-3. You will review scripts before execution, especially those that require `sudo` privileges.
-4. The maintainer(s) of this repository bear no responsibility for any outcome resulting from the use of these materials.
-
-## Reporting Issues
-
-If you encounter any issues with the scripts, please open an issue on the [GitHub Issues page](https://github.com/Naftaliro/zorinos-gnome-themes/issues). While support is provided on a best-effort basis, there is no guarantee of a response or resolution.
+The scripts, documentation, and other materials in this repository were created with the significant assistance of an artificial intelligence (AI) system. While reviewed by a human, the content may contain errors, inaccuracies, or unforeseen issues. No guarantee is made as to the quality, accuracy, or safety of AI-generated code or human-generated content.

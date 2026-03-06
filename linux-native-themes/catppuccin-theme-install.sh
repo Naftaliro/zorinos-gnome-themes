@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
 #
+# This script is provided "as is", without warranty of any kind. Use at your own risk.
+# It is not affiliated with any of the upstream theme authors.
+# For full details, see the repository's DISCLAIMER.md and LICENSE files.
+#
+# ------------------------------------------------------------------------------
 # Catppuccin Mocha (Soothing Pastel Dark) Full System Theme Installer
 # for ZorinOS 18 Pro / Ubuntu (GNOME)
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 # Installs: GTK theme (Mocha dark, purple/mauve accent), GNOME Shell theme,
 #           Catppuccin-Mocha icons, Catppuccin-Mocha-Mauve cursors, libadwaita
 #           override, and Flatpak theming. A warm, soothing pastel dark theme
 #           beloved by the developer community.
 #
-# DISCLAIMER: This script is provided "as is" without warranty of any kind.
-# It was created with the assistance of AI. Use at your own risk. See the
-# full DISCLAIMER.md in the repository root for details.
-#
 # Theme suite:
 #   - Catppuccin GTK Theme:  https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
 #   - Catppuccin Cursors:    https://github.com/catppuccin/cursors
-#
-# Usage:
-#   chmod +x catppuccin-theme-install.sh && ./catppuccin-theme-install.sh
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 
 set -euo pipefail
 
@@ -26,9 +24,9 @@ RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; BO
 info()  { echo -e "${CYAN}[INFO]${NC}  $*"; }
 ok()    { echo -e "${GREEN}[OK]${NC}    $*"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC}  $*"; }
-header(){ echo -e "\n${BOLD}═══════════════════════════════════════════════════════════${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}═══════════════════════════════════════════════════════════${NC}\n"; }
+header(){ echo -e "\n${BOLD}===================================================================${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}===================================================================${NC}\n"; }
 
-# ── Configuration ─────────────────────────────────────────────────────────────
+# --- Configuration --------------------------------------------------------------
 ACCENT="purple"          # Options: default purple pink red orange yellow green teal grey
 COLOR="dark"             # Options: light dark
 FLAVOR_TWEAK="macchiato" # Options: frappe macchiato (leave empty for Mocha default)
@@ -43,9 +41,9 @@ mkdir -p "${WORK_DIR}"
 cleanup() { info "Cleaning up..."; rm -rf "${WORK_DIR}"; ok "Done."; }
 trap cleanup EXIT
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 1/7: Installing System Dependencies"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 info "Updating package lists and installing required packages..."
 sudo apt update -y
 sudo apt install -y \
@@ -55,17 +53,17 @@ sudo apt install -y \
     dconf-cli unzip wget
 ok "All dependencies installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 2/7: Cloning Catppuccin GTK Theme Repository"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}"
 info "Cloning Catppuccin GTK Theme (this is a large repo, please wait)..."
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git --depth=1
 ok "Repository cloned."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 3/7: Installing Catppuccin GTK + GNOME Shell Theme"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}/Catppuccin-GTK-Theme/themes"
 INSTALL_ARGS=(-c "${COLOR}" -t "${ACCENT}")
 ALL_TWEAKS=""
@@ -81,9 +79,9 @@ if [[ "${LIBADWAITA}" == "yes" ]]; then
 fi
 ok "GTK + GNOME Shell theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 4/7: Installing Catppuccin Icons"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}/Catppuccin-GTK-Theme"
 ICON_DEST="${HOME}/.local/share/icons"
 mkdir -p "${ICON_DEST}"
@@ -91,9 +89,9 @@ info "Installing Catppuccin-Mocha icons..."
 cp -r icons/Catppuccin-Mocha "${ICON_DEST}/"
 ok "Icons installed to ${ICON_DEST}/Catppuccin-Mocha."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 5/7: Downloading and Installing Catppuccin Cursors"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}"
 CURSOR_ZIP="catppuccin-${CURSOR_FLAVOR}-${CURSOR_ACCENT}-cursors.zip"
 CURSOR_URL="https://github.com/catppuccin/cursors/releases/download/v2.0.0/${CURSOR_ZIP}"
@@ -103,9 +101,9 @@ info "Extracting cursors..."
 unzip -qo "${CURSOR_ZIP}" -d "${HOME}/.local/share/icons/"
 ok "Cursors installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 6/7: Determining Theme Names"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 # Catppuccin theme naming: Catppuccin-<Accent>-<Color>[-<Flavor>][-<Tweaks>]
 # The install script creates names like: Catppuccin-purple-Dark-Macchiato
 COLOR_PART=""; case "${COLOR}" in light) COLOR_PART="-Light";; dark) COLOR_PART="-Dark";; esac
@@ -124,9 +122,9 @@ ICON_THEME="Catppuccin-Mocha"
 CURSOR_THEME="catppuccin-${CURSOR_FLAVOR}-${CURSOR_ACCENT}-cursors"
 info "Resolved GTK theme name: ${GTK_THEME}"
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 7/7: Applying Theme via gsettings"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 if [[ "${FLATPAK_THEME}" == "yes" ]]; then
     info "Connecting theme to Flatpak apps..."
     sudo flatpak override --filesystem=xdg-config/gtk-3.0 2>/dev/null || true

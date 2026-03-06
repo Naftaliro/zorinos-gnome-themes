@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
 #
+# This script is provided "as is", without warranty of any kind. Use at your own risk.
+# It is not affiliated with any of the upstream theme authors.
+# For full details, see the repository's DISCLAIMER.md and LICENSE files.
+#
+# ------------------------------------------------------------------------------
 # Orchis (Material Design) Full System Theme Installer
 # for ZorinOS 18 Pro / Ubuntu (GNOME)
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 # Installs: GTK theme (dark, purple accent), GNOME Shell theme, Tela icons
 #           (purple), Graphite cursors (dark), libadwaita override, and Flatpak
 #           theming. A polished Material Design look for your GNOME desktop.
-#
-# DISCLAIMER: This script is provided "as is" without warranty of any kind.
-# It was created with the assistance of AI. Use at your own risk. See the
-# full DISCLAIMER.md in the repository root for details.
 #
 # Theme suite by vinceliuice:
 #   - Orchis GTK Theme:    https://github.com/vinceliuice/Orchis-theme
 #   - Tela Icon Theme:     https://github.com/vinceliuice/Tela-icon-theme
 #   - Graphite Cursors:    https://github.com/vinceliuice/Graphite-cursors
-#
-# Usage:
-#   chmod +x orchis-theme-install.sh && ./orchis-theme-install.sh
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 
 set -euo pipefail
 
@@ -26,9 +24,9 @@ RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; BO
 info()  { echo -e "${CYAN}[INFO]${NC}  $*"; }
 ok()    { echo -e "${GREEN}[OK]${NC}    $*"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC}  $*"; }
-header(){ echo -e "\n${BOLD}═══════════════════════════════════════════════════════════${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}═══════════════════════════════════════════════════════════${NC}\n"; }
+header(){ echo -e "\n${BOLD}===================================================================${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}===================================================================${NC}\n"; }
 
-# ── Configuration ─────────────────────────────────────────────────────────────
+# --- Configuration --------------------------------------------------------------
 ACCENT="purple"          # Options: default purple pink red orange yellow green teal grey
 COLOR="dark"             # Options: standard light dark
 SIZE="standard"          # Options: standard compact
@@ -44,9 +42,9 @@ mkdir -p "${WORK_DIR}"
 cleanup() { info "Cleaning up..."; rm -rf "${WORK_DIR}"; ok "Done."; }
 trap cleanup EXIT
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 1/6: Installing System Dependencies"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 info "Updating package lists and installing required packages..."
 sudo apt update -y
 sudo apt install -y \
@@ -56,9 +54,9 @@ sudo apt install -y \
     dconf-cli
 ok "All dependencies installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 2/6: Cloning Repositories"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}"
 info "Cloning Orchis GTK Theme..."
 git clone https://github.com/vinceliuice/Orchis-theme.git --depth=1
@@ -68,9 +66,9 @@ info "Cloning Graphite Cursors..."
 git clone https://github.com/vinceliuice/Graphite-cursors.git --depth=1
 ok "All repositories cloned."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 3/6: Installing Orchis GTK + GNOME Shell Theme"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}/Orchis-theme"
 INSTALL_ARGS=(-c "${COLOR}" -t "${ACCENT}" -s "${SIZE}" -i "${SHELL_ICON}")
 [[ -n "${TWEAKS}" ]] && INSTALL_ARGS+=(--tweaks ${TWEAKS})
@@ -82,17 +80,17 @@ if [[ "${LIBADWAITA}" == "yes" ]]; then
 fi
 ok "GTK + GNOME Shell theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 4/6: Installing Tela Icons"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}/Tela-icon-theme"
 info "Installing Tela icons (${ICON_COLOR} variant)..."
 ./install.sh "${ICON_COLOR}"
 ok "Icons installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 5/6: Installing Graphite Cursors"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 cd "${WORK_DIR}/Graphite-cursors"
 info "Installing Graphite cursors..."
 DEST_DIR="${HOME}/.local/share/icons"
@@ -101,9 +99,9 @@ cp -r dist-dark "${DEST_DIR}/Graphite-dark-cursors"
 cp -r dist-light "${DEST_DIR}/Graphite-light-cursors"
 ok "Cursors installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 6/6: Applying Theme via gsettings"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 if [[ "${FLATPAK_THEME}" == "yes" ]]; then
     info "Connecting theme to Flatpak apps..."
     sudo flatpak override --filesystem=xdg-config/gtk-3.0 2>/dev/null || true

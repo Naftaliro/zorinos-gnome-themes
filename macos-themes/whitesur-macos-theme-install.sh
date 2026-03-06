@@ -1,35 +1,35 @@
 #!/usr/bin/env bash
 #
+# This script is provided "as is", without warranty of any kind. Use at your own risk.
+# It is not affiliated with any of the upstream theme authors.
+# For full details, see the repository's DISCLAIMER.md and LICENSE files.
+#
+# ------------------------------------------------------------------------------
 # WhiteSur macOS Full System Theme Installer for ZorinOS 18 Pro / Ubuntu (GNOME)
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 # Installs: GTK theme (dark, purple accent), GNOME Shell theme, GDM login theme,
 #           macOS icons (purple), macOS cursors, macOS wallpapers, libadwaita
 #           override, Firefox theme, and Flatpak theming.
 #
 # Designed for: ZorinOS 18 Pro (Ubuntu 24.04 base) with GNOME desktop
-# Hardware ref: Framework Laptop 13 (works on any GNOME system)
-#
-# Usage:
-#   chmod +x whitesur-macos-theme-install.sh && ./whitesur-macos-theme-install.sh
-#
-# One-liner (copy-paste into terminal):
-#   curl -fsSL https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/whitesur-macos-theme-install.sh | bash
-#
-# Author: Auto-generated guide
-# License: MIT
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 
 set -euo pipefail
 
-# ── Color helpers ─────────────────────────────────────────────────────────────
-RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; BOLD='\033[1m'; NC='\033[0m'
+# --- Color helpers --------------------------------------------------------------
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+NC='\033[0m'
 info()  { echo -e "${CYAN}[INFO]${NC}  $*"; }
 ok()    { echo -e "${GREEN}[OK]${NC}    $*"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC}  $*"; }
 err()   { echo -e "${RED}[ERROR]${NC} $*"; }
-header(){ echo -e "\n${BOLD}═══════════════════════════════════════════════════════════${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}═══════════════════════════════════════════════════════════${NC}\n"; }
+header(){ echo -e "\n${BOLD}===================================================================${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}===================================================================${NC}\n"; }
 
-# ── Configuration (edit these to customize) ───────────────────────────────────
+# --- Configuration (edit these to customize) ------------------------------------
 ACCENT="purple"          # Options: default blue purple pink red orange yellow green grey
 COLOR="dark"             # Options: light dark
 OPACITY="normal"         # Options: normal solid
@@ -45,7 +45,7 @@ GDM_THEME="yes"          # Install GDM (login screen) theme
 INSTALL_WALLPAPERS="yes" # Install macOS-style wallpapers
 INSTALL_GNOME_BG="yes"   # Install time-based GNOME backgrounds
 
-# ── Workspace ─────────────────────────────────────────────────────────────────
+# --- Workspace ------------------------------------------------------------------
 WORK_DIR="${HOME}/.whitesur-install-tmp"
 mkdir -p "${WORK_DIR}"
 
@@ -56,9 +56,9 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 1/8: Installing System Dependencies"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 info "Updating package lists and installing required packages..."
 sudo apt update -y
@@ -71,9 +71,9 @@ sudo apt install -y \
 
 ok "All dependencies installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 2/8: Cloning All WhiteSur Repositories"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}"
 
@@ -91,9 +91,9 @@ git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git --depth=1
 
 ok "All repositories cloned."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 3/8: Installing WhiteSur GTK + GNOME Shell Theme"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/WhiteSur-gtk-theme"
 
@@ -121,9 +121,9 @@ fi
 
 ok "GTK + GNOME Shell theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 4/8: Installing WhiteSur Icon Theme"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/WhiteSur-icon-theme"
 
@@ -132,9 +132,9 @@ info "Installing WhiteSur icons with ${ACCENT} accent..."
 
 ok "Icon theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 5/8: Installing WhiteSur Cursors"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/WhiteSur-cursors"
 
@@ -143,9 +143,9 @@ info "Installing WhiteSur cursor theme..."
 
 ok "Cursor theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 6/8: Installing WhiteSur Wallpapers"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/WhiteSur-wallpapers"
 
@@ -161,9 +161,9 @@ fi
 
 ok "Wallpapers installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 7/8: Applying Tweaks (GDM, Firefox, Flatpak)"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/WhiteSur-gtk-theme"
 
@@ -194,9 +194,9 @@ fi
 info "Applying Dash to Dock fix..."
 ./tweaks.sh -d 2>/dev/null || warn "Dash to Dock fix skipped (extension may not be installed)."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 8/8: Applying Theme via gsettings"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 # Determine the exact theme directory names
 # GTK theme: WhiteSur-Dark-purple (color=Dark, accent=purple, opacity=normal -> no suffix)
@@ -252,9 +252,9 @@ fi
 
 ok "All gsettings applied."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "INSTALLATION COMPLETE!"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 echo -e "${GREEN}${BOLD}"
 cat << 'EOF'
@@ -288,5 +288,6 @@ echo "  cd ~/.whitesur-install-tmp/WhiteSur-gtk-theme  (if still present)"
 echo "  ./install.sh -r                  # Remove GTK themes"
 echo "  sudo ./tweaks.sh -g -r           # Remove GDM theme"
 echo "  ./tweaks.sh -f -r                # Remove Firefox theme"
+
 echo ""
 echo -e "${YELLOW}Log out and log back in to see all changes!${NC}"

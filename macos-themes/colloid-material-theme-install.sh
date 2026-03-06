@@ -1,40 +1,33 @@
 #!/usr/bin/env bash
 #
+# This script is provided "as is", without warranty of any kind. Use at your own risk.
+# It is not affiliated with any of the upstream theme authors.
+# For full details, see the repository's DISCLAIMER.md and LICENSE files.
+#
+# ------------------------------------------------------------------------------
 # Colloid Material Design Full System Theme Installer for ZorinOS 18 Pro / Ubuntu (GNOME)
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 # Installs: GTK theme (dark, purple accent), GNOME Shell theme, matching icons
 #           (purple), matching cursors (dark), libadwaita override, and Flatpak
 #           theming. A modern, clean Material Design look for your desktop.
-#
-# Designed for: ZorinOS 18 Pro (Ubuntu 24.04 base) with GNOME desktop
-# Hardware ref: Framework Laptop 13 (works on any GNOME system)
 #
 # Theme suite by vinceliuice:
 #   - Colloid GTK Theme:  https://github.com/vinceliuice/Colloid-gtk-theme
 #   - Colloid Icon Theme: https://github.com/vinceliuice/Colloid-icon-theme
 #   - Colloid Cursors:    included in Colloid-icon-theme/cursors/
-#
-# Usage:
-#   chmod +x colloid-material-theme-install.sh && ./colloid-material-theme-install.sh
-#
-# One-liner (copy-paste into terminal):
-#   curl -fsSL https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/colloid-material-theme-install.sh | bash
-#
-# Author: Auto-generated guide
-# License: MIT
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 
 set -euo pipefail
 
-# ── Color helpers ─────────────────────────────────────────────────────────────
+# --- Color helpers --------------------------------------------------------------
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; BOLD='\033[1m'; NC='\033[0m'
 info()  { echo -e "${CYAN}[INFO]${NC}  $*"; }
 ok()    { echo -e "${GREEN}[OK]${NC}    $*"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC}  $*"; }
 err()   { echo -e "${RED}[ERROR]${NC} $*"; }
-header(){ echo -e "\n${BOLD}═══════════════════════════════════════════════════════════${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}═══════════════════════════════════════════════════════════${NC}\n"; }
+header(){ echo -e "\n${BOLD}===================================================================${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}===================================================================${NC}\n"; }
 
-# ── Configuration (edit these to customize) ───────────────────────────────────
+# --- Configuration (edit these to customize) ------------------------------------
 ACCENT="purple"          # Options: default blue purple pink red orange yellow green teal grey
 COLOR="dark"             # Options: standard light dark
 SIZE="standard"          # Options: standard compact
@@ -45,7 +38,7 @@ FLATPAK_THEME="yes"      # Connect theme to Flatpak apps
 ICON_SCHEME="default"    # Options: default nord dracula gruvbox everforest catppuccin
 CURSOR_VARIANT="dark"    # Options: light dark
 
-# ── Workspace ─────────────────────────────────────────────────────────────────
+# --- Workspace ------------------------------------------------------------------
 WORK_DIR="${HOME}/.colloid-install-tmp"
 mkdir -p "${WORK_DIR}"
 
@@ -56,9 +49,9 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 1/6: Installing System Dependencies"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 info "Updating package lists and installing required packages..."
 sudo apt update -y
@@ -70,9 +63,9 @@ sudo apt install -y \
 
 ok "All dependencies installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 2/6: Cloning Colloid Repositories"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}"
 
@@ -84,9 +77,9 @@ git clone https://github.com/vinceliuice/Colloid-icon-theme.git --depth=1
 
 ok "All repositories cloned."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 3/6: Installing Colloid GTK + GNOME Shell Theme"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/Colloid-gtk-theme"
 
@@ -112,9 +105,9 @@ fi
 
 ok "GTK + GNOME Shell theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 4/6: Installing Colloid Icon Theme"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/Colloid-icon-theme"
 
@@ -128,9 +121,9 @@ fi
 
 ok "Icon theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 5/6: Installing Colloid Cursors"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/Colloid-icon-theme/cursors"
 
@@ -139,9 +132,9 @@ info "Installing Colloid cursor theme..."
 
 ok "Cursor theme installed (both light and dark variants)."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 6/6: Applying Theme via gsettings"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 # Flatpak theme connection
 if [[ "${FLATPAK_THEME}" == "yes" ]]; then
@@ -210,9 +203,9 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 ok "All gsettings applied."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "INSTALLATION COMPLETE!"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 echo -e "${GREEN}${BOLD}"
 cat << 'EOF'
@@ -249,5 +242,6 @@ echo -e "${NC}"
 echo -e "${CYAN}To uninstall everything later:${NC}"
 echo "  cd ~/.colloid-install-tmp/Colloid-gtk-theme  (if still present)"
 echo "  ./install.sh -r                  # Remove GTK themes"
+
 echo ""
 echo -e "${YELLOW}Log out and log back in to see all changes!${NC}"

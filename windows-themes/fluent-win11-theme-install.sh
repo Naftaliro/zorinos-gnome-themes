@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 #
+# This script is provided "as is", without warranty of any kind. Use at your own risk.
+# It is not affiliated with any of the upstream theme authors.
+# For full details, see the repository's DISCLAIMER.md and LICENSE files.
+#
+# ------------------------------------------------------------------------------
 # Fluent (Windows 11 Fluent Design) Full System Theme Installer
 # for ZorinOS 18 Pro / Ubuntu (GNOME)
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 # Installs: GTK theme (dark, purple accent), GNOME Shell theme, Fluent icons
 #           (purple), Fluent cursors (dark), libadwaita override, and Flatpak
 #           theming. A polished Windows 11 Fluent Design look for your desktop.
@@ -11,25 +16,19 @@
 #   - Fluent GTK Theme:  https://github.com/vinceliuice/Fluent-gtk-theme
 #   - Fluent Icon Theme: https://github.com/vinceliuice/Fluent-icon-theme
 #   - Fluent Cursors:    included in Fluent-icon-theme/cursors/
-#
-# Usage:
-#   chmod +x fluent-win11-theme-install.sh && ./fluent-win11-theme-install.sh
-#
-# Author: Auto-generated guide
-# License: MIT
-# ──────────────────────────────────────────────────────────────────────────────
+# ------------------------------------------------------------------------------
 
 set -euo pipefail
 
-# ── Color helpers ─────────────────────────────────────────────────────────────
+# --- Color helpers --------------------------------------------------------------
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; BOLD='\033[1m'; NC='\033[0m'
 info()  { echo -e "${CYAN}[INFO]${NC}  $*"; }
 ok()    { echo -e "${GREEN}[OK]${NC}    $*"; }
 warn()  { echo -e "${YELLOW}[WARN]${NC}  $*"; }
 err()   { echo -e "${RED}[ERROR]${NC} $*"; }
-header(){ echo -e "\n${BOLD}═══════════════════════════════════════════════════════════${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}═══════════════════════════════════════════════════════════${NC}\n"; }
+header(){ echo -e "\n${BOLD}===================================================================${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}===================================================================${NC}\n"; }
 
-# ── Configuration (edit these to customize) ───────────────────────────────────
+# --- Configuration (edit these to customize) ------------------------------------
 ACCENT="purple"          # Options: default blue purple pink red orange yellow green teal grey
 COLOR="dark"             # Options: standard light dark
 SIZE="standard"          # Options: standard compact
@@ -42,7 +41,7 @@ FLATPAK_THEME="yes"      # Connect theme to Flatpak apps
 ICON_COLOR="purple"      # Options: standard green grey orange pink purple red yellow teal
 CURSOR_VARIANT="dark"    # Options: light dark
 
-# ── Workspace ─────────────────────────────────────────────────────────────────
+# --- Workspace ------------------------------------------------------------------
 WORK_DIR="${HOME}/.fluent-install-tmp"
 mkdir -p "${WORK_DIR}"
 
@@ -53,9 +52,9 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 1/5: Installing System Dependencies"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 info "Updating package lists and installing required packages..."
 sudo apt update -y
@@ -67,9 +66,9 @@ sudo apt install -y \
 
 ok "All dependencies installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 2/5: Cloning Fluent Repositories"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}"
 
@@ -81,9 +80,9 @@ git clone https://github.com/vinceliuice/Fluent-icon-theme.git --depth=1
 
 ok "All repositories cloned."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 3/5: Installing Fluent GTK + GNOME Shell Theme"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/Fluent-gtk-theme"
 
@@ -110,9 +109,9 @@ fi
 
 ok "GTK + GNOME Shell theme installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 4/5: Installing Fluent Icons + Cursors"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 cd "${WORK_DIR}/Fluent-icon-theme"
 
@@ -124,9 +123,9 @@ cd cursors && ./install.sh && cd ..
 
 ok "Icons and cursors installed."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "STEP 5/5: Applying Theme via gsettings"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 # Flatpak theme connection
 if [[ "${FLATPAK_THEME}" == "yes" ]]; then
@@ -188,9 +187,9 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 ok "All gsettings applied."
 
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 header "INSTALLATION COMPLETE!"
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================================
 
 echo -e "${GREEN}${BOLD}"
 cat << 'EOF'
@@ -220,5 +219,6 @@ echo -e "${NC}"
 
 echo -e "${CYAN}To uninstall everything later:${NC}"
 echo "  ./install.sh -u    # From the Fluent-gtk-theme directory"
+
 echo ""
 echo -e "${YELLOW}Log out and log back in to see all changes!${NC}"
