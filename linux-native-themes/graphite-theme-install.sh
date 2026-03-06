@@ -3,6 +3,9 @@
 # This script is provided "as is", without warranty of any kind. Use at your own risk.
 # It is not affiliated with any of the upstream theme authors.
 # For full details, see the repository's DISCLAIMER.md and LICENSE files.
+# ORIGINALITY NOTICE: This script is an original automation wrapper written from
+# scratch. It does not contain any code copied or adapted from the upstream theme
+# repositories. It merely invokes the upstream projects' own install scripts.
 #
 # ------------------------------------------------------------------------------
 # Graphite (Minimalist Dark) Full System Theme Installer

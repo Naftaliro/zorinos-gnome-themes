@@ -1,0 +1,22 @@
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# Secrets
+.env
+.env.local
+*.key
+*.pem
