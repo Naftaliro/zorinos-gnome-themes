@@ -63,7 +63,8 @@ header "STEP 2/7: Cloning Catppuccin GTK Theme Repository"
 # ================================================================================
 cd "${WORK_DIR}"
 info "Cloning Catppuccin GTK Theme (this is a large repo, please wait)..."
-git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git --depth=1
+git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
+cd Catppuccin-GTK-Theme && git checkout f25d8cf && cd ..
 ok "Repository cloned."
 
 # ================================================================================

@@ -84,13 +84,15 @@ header "STEP 2/5: Cloning Repositories"
 cd "${WORK_DIR}"
 
 info "Cloning We10X GTK Theme..."
-git clone https://github.com/yeyushengfan258/We10X-gtk-theme.git --depth=1
+git clone https://github.com/yeyushengfan258/We10X-gtk-theme.git
+cd We10X-gtk-theme && git checkout ee2475e && cd ..
 
 info "Cloning We10X Icon Theme..."
-git clone https://github.com/yeyushengfan258/We10X-icon-theme.git --depth=1
+git clone https://github.com/yeyushengfan258/We10X-icon-theme.git
+cd We10X-icon-theme && git checkout 0f52ff2 && cd ..
 
 info "Cloning Fluent Icon Theme (for cursors)..."
-git clone https://github.com/vinceliuice/Fluent-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/Fluent-icon-theme.git --depth=1 --branch 2025-08-21
 
 ok "All repositories cloned."
 
