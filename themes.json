@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-03-07",
+  "themes": [
+    {
+      "name": "WhiteSur macOS",
+      "category": "macOS",
+      "gtk_theme": "WhiteSur-Dark-purple",
+      "shell_theme": "WhiteSur-Dark-purple",
+      "icon_theme": "WhiteSur-dark",
+      "cursor_theme": "WhiteSur-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "macos-themes/whitesur-macos-theme-install.sh",
+      "description": "macOS Big Sur / Monterey look with dark mode and purple accent. Includes GDM, wallpapers, and Firefox theme."
+    },
+    {
+      "name": "Colloid Material",
+      "category": "macOS",
+      "gtk_theme": "Colloid-Purple-Dark",
+      "shell_theme": "Colloid-Purple-Dark",
+      "icon_theme": "Colloid-purple-dark",
+      "cursor_theme": "Colloid-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "macos-themes/colloid-material-theme-install.sh",
+      "description": "Clean Material Design theme with dark mode and purple accent. Supports Nord, Dracula, Catppuccin colorschemes."
+    },
+    {
+      "name": "Fluent Win11",
+      "category": "Windows",
+      "gtk_theme": "Fluent-purple-Dark",
+      "shell_theme": "Fluent-purple-Dark",
+      "icon_theme": "Fluent-purple-dark",
+      "cursor_theme": "Fluent-dark-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "windows-themes/fluent-win11-theme-install.sh",
+      "description": "Windows 11 Fluent Design with dark mode and purple accent. Matching icons and cursors by vinceliuice."
+    },
+    {
+      "name": "Win11",
+      "category": "Windows",
+      "gtk_theme": "Win11-purple-Dark",
+      "shell_theme": "Win11-purple-Dark",
+      "icon_theme": "Win11-purple-dark",
+      "cursor_theme": "Fluent-dark-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "windows-themes/win11-theme-install.sh",
+      "description": "Windows 11 theme by yeyushengfan258. Dark mode with purple accent and Fluent cursors."
+    },
+    {
+      "name": "We10X Win10",
+      "category": "Windows",
+      "gtk_theme": "We10X-purple-Dark",
+      "shell_theme": "We10X-purple-Dark",
+      "icon_theme": "We10X-purple-dark",
+      "cursor_theme": "Fluent-dark-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "windows-themes/we10x-win10-theme-install.sh",
+      "description": "Windows 10 theme by yeyushengfan258. Dark mode with purple accent and Fluent cursors."
+    },
+    {
+      "name": "Orchis Material",
+      "category": "Linux-Native",
+      "gtk_theme": "Orchis-Purple-Dark",
+      "shell_theme": "Orchis-Purple-Dark",
+      "icon_theme": "Tela-purple-dark",
+      "cursor_theme": "Graphite-dark-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "linux-native-themes/orchis-theme-install.sh",
+      "description": "Material Design theme with rounded corners and purple accent. Paired with Tela icons and Graphite cursors."
+    },
+    {
+      "name": "Graphite Minimal",
+      "category": "Linux-Native",
+      "gtk_theme": "Graphite-purple-Dark",
+      "shell_theme": "Graphite-purple-Dark",
+      "icon_theme": "Tela-purple-dark",
+      "cursor_theme": "Graphite-dark-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "linux-native-themes/graphite-theme-install.sh",
+      "description": "Minimalist flat theme with purple accent. Includes GDM theme, Tela icons, and Graphite cursors."
+    },
+    {
+      "name": "Lavanda Purple",
+      "category": "Linux-Native",
+      "gtk_theme": "Lavanda-Dark",
+      "shell_theme": "Lavanda-Dark",
+      "icon_theme": "Tela-purple-dark",
+      "cursor_theme": "Graphite-dark-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "linux-native-themes/lavanda-theme-install.sh",
+      "description": "Elegant theme with native purple palette. Inherently purple — no accent flag needed. Paired with Tela icons."
+    },
+    {
+      "name": "Catppuccin Mocha",
+      "category": "Linux-Native",
+      "gtk_theme": "Catppuccin-Mauve-Dark-Macchiato",
+      "shell_theme": "Catppuccin-Mauve-Dark-Macchiato",
+      "icon_theme": "Catppuccin-Mocha",
+      "cursor_theme": "catppuccin-mocha-mauve-cursors",
+      "color_scheme": "prefer-dark",
+      "install_script": "linux-native-themes/catppuccin-theme-install.sh",
+      "description": "Warm, soothing pastel dark theme beloved by developers. Catppuccin icons and mauve cursors."
+    }
+  ]
+}
