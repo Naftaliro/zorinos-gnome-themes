@@ -10,8 +10,8 @@ The script installs and configures the following components for a cohesive deskt
 
 | Component | Theme | Variant | Source |
 |---|---|---|---|
-| **GTK Theme** | Catppuccin | `Catppuccin-purple-Dark-Macchiato` | [Fausto-Korpsvart/Catppuccin-GTK-Theme][1] |
-| **GNOME Shell** | Catppuccin | `Catppuccin-purple-Dark-Macchiato` | [Fausto-Korpsvart/Catppuccin-GTK-Theme][1] |
+| **GTK Theme** | Catppuccin | `Catppuccin-Mauve-Dark-Macchiato` | [Fausto-Korpsvart/Catppuccin-GTK-Theme][1] |
+| **GNOME Shell** | Catppuccin | `Catppuccin-Mauve-Dark-Macchiato` | [Fausto-Korpsvart/Catppuccin-GTK-Theme][1] |
 | **Icon Theme** | Catppuccin | `Catppuccin-Mocha` | [Fausto-Korpsvart/Catppuccin-GTK-Theme][1] |
 | **Cursor Theme**| Catppuccin | `catppuccin-mocha-mauve-cursors` | [catppuccin/cursors][2] |
 | **Libadwaita** | Catppuccin | Overridden for GTK4 apps | [Fausto-Korpsvart/Catppuccin-GTK-Theme][1] |
@@ -70,7 +70,8 @@ You can easily customize the theme by editing the configuration variables at the
 
 ```bash
 # ── Configuration ─────────────────────────────────────────────────────────────
-ACCENT="purple"          # Options: default purple pink red orange yellow green teal grey
+ACCENT="mauve"           # Options: default blue flamingo green grey lavender maroon mauve peach pink red rosewater sapphire sky teal yellow
+                         # NOTE: Catppuccin uses its own color names. "mauve" is Catppuccin's purple.
 COLOR="dark"             # Options: light dark
 FLAVOR_TWEAK="macchiato" # Options: frappe macchiato (leave empty for Mocha default)
 EXTRA_TWEAKS="black"     # Options: black float outline macos (space-separated, can combine)
@@ -80,7 +81,7 @@ CURSOR_FLAVOR="mocha"    # Options: latte frappe macchiato mocha
 CURSOR_ACCENT="mauve"    # Options: blue dark flamingo green lavender maroon mauve peach pink red rosewater sapphire sky teal yellow
 ```
 
-For example, to install the `frappe` flavor with a `red` accent, you would change `FLAVOR_TWEAK` to `"frappe"` and `ACCENT` to `"red"`.
+For example, to install the `frappe` flavor with a `red` accent, you would change `FLAVOR_TWEAK` to `"frappe"` and `ACCENT` to `"red"`. Note that Catppuccin uses its own color names (e.g., `mauve` for purple, `lavender` for light purple, `sapphire` for blue).
 
 ## Full Installation Script
 
@@ -118,7 +119,8 @@ warn()  { echo -e "${YELLOW}[WARN]${NC}  $*"; }
 header(){ echo -e "\n${BOLD}═══════════════════════════════════════════════════════════${NC}"; echo -e "${BOLD}  $*${NC}"; echo -e "${BOLD}═══════════════════════════════════════════════════════════${NC}\n"; }
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-ACCENT="purple"          # Options: default purple pink red orange yellow green teal grey
+ACCENT="mauve"           # Options: default blue flamingo green grey lavender maroon mauve peach pink red rosewater sapphire sky teal yellow
+                         # NOTE: Catppuccin uses its own color names. "mauve" is Catppuccin's purple.
 COLOR="dark"             # Options: light dark
 FLAVOR_TWEAK="macchiato" # Options: frappe macchiato (leave empty for Mocha default)
 EXTRA_TWEAKS="black"     # Options: black float outline macos (space-separated, can combine)
@@ -196,16 +198,18 @@ ok "Cursors installed."
 header "STEP 6/7: Determining Theme Names"
 # ══════════════════════════════════════════════════════════════════════════════
 # Catppuccin theme naming: Catppuccin-<Accent>-<Color>[-<Flavor>][-<Tweaks>]
-# The install script creates names like: Catppuccin-purple-Dark-Macchiato
+# The install script creates names like: Catppuccin-Mauve-Dark-Macchiato
 COLOR_PART=""; case "${COLOR}" in light) COLOR_PART="-Light";; dark) COLOR_PART="-Dark";; esac
-ACCENT_PART="${ACCENT}"; [[ "${ACCENT}" == "default" ]] && ACCENT_PART=""
+# Capitalize the first letter of the accent for the directory name
+ACCENT_CAP="$(echo "${ACCENT}" | sed 's/^./\U&/')"
+[[ "${ACCENT}" == "default" ]] && ACCENT_CAP=""
 FLAVOR_PART=""
 case "${FLAVOR_TWEAK}" in
     frappe)     FLAVOR_PART="-Frappe";;
     macchiato)  FLAVOR_PART="-Macchiato";;
 esac
-if [[ -n "${ACCENT_PART}" ]]; then
-    GTK_THEME="Catppuccin-${ACCENT_PART}${COLOR_PART}${FLAVOR_PART}"
+if [[ -n "${ACCENT_CAP}" ]]; then
+    GTK_THEME="Catppuccin-${ACCENT_CAP}${COLOR_PART}${FLAVOR_PART}"
 else
     GTK_THEME="Catppuccin${COLOR_PART}${FLAVOR_PART}"
 fi
@@ -242,8 +246,8 @@ cat << \'EOF\'
    ╔══════════════════════════════════════════════════════════╗
    ║   Catppuccin Mocha (Pastel Dark) - Fully Installed!     ║
    ╠══════════════════════════════════════════════════════════╣
-   ║  GTK Theme:    Catppuccin-purple-Dark-Macchiato         ║
-   ║  Shell Theme:  Catppuccin-purple-Dark-Macchiato         ║
+   ║  GTK Theme:    Catppuccin-Mauve-Dark-Macchiato          ║
+   ║  Shell Theme:  Catppuccin-Mauve-Dark-Macchiato          ║
    ║  Icon Theme:   Catppuccin-Mocha                         ║
    ║  Cursors:      catppuccin-mocha-mauve-cursors           ║
    ║  Libadwaita:   Overridden with Catppuccin dark theme    ║

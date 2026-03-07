@@ -6,4 +6,5 @@
 40b2d71265a3df3f410d2ff2741a183098e076162a44b87e562fd21cdabb3bea  linux-native-themes/orchis-theme-install.sh
 345b557ccf66c441344b4b927aa1a63bb8513524de7fdbc040939cd9954c446f  linux-native-themes/graphite-theme-install.sh
 4c0ee46498db85fce229fe809791f09b0cd2e3d0601aae602a25dc74c2bcd36c  linux-native-themes/lavanda-theme-install.sh
-ffe126512e69ae9a8a7c76b6100700e142d75c756be681edf2f90089038d0de4  linux-native-themes/catppuccin-theme-install.sh
+e9d7fe98e5767cf3c1402e95976cbcadae244e74c7da7964c248f8705f4f458d  linux-native-themes/catppuccin-theme-install.sh
+0abd95cb3a67c0e3ff60c17a58742b6cda6f81d21b68cf24625e9b4adaa19fef  themes.json
