@@ -78,10 +78,10 @@ header "STEP 2/5: Cloning Fluent Repositories"
 cd "${WORK_DIR}"
 
 info "Cloning Fluent GTK Theme..."
-git clone https://github.com/vinceliuice/Fluent-gtk-theme.git --depth=1
+git clone https://github.com/vinceliuice/Fluent-gtk-theme.git --depth=1 --branch 2025-04-17
 
 info "Cloning Fluent Icon Theme (includes cursors)..."
-git clone https://github.com/vinceliuice/Fluent-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/Fluent-icon-theme.git --depth=1 --branch 2025-08-21
 
 ok "All repositories cloned."
 

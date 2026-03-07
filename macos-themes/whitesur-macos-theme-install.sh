@@ -89,16 +89,17 @@ header "STEP 2/8: Cloning All WhiteSur Repositories"
 cd "${WORK_DIR}"
 
 info "Cloning WhiteSur GTK Theme..."
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1 --branch 2025-07-24
 
 info "Cloning WhiteSur Icon Theme..."
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1 --branch v2025-02-10
 
 info "Cloning WhiteSur Cursors..."
 git clone https://github.com/vinceliuice/WhiteSur-cursors.git --depth=1
+cd WhiteSur-cursors && git checkout e190baf && cd ..
 
 info "Cloning WhiteSur Wallpapers..."
-git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git --depth=1
+git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git --depth=1 --branch v2.0
 
 ok "All repositories cloned."
 

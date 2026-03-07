@@ -38,7 +38,7 @@ These scripts download and execute code from upstream GitHub repositories. While
 
 ```bash
 # Step 1: Download the script
-curl -fsSL https://raw.githubusercontent.com/Naftaliro/zorinos-gnome-themes/v1.0.0/macos-themes/whitesur-macos-theme-install.sh -o whitesur-install.sh
+curl -fsSL https://raw.githubusercontent.com/Naftaliro/zorinos-gnome-themes/v1.2.0/macos-themes/whitesur-macos-theme-install.sh -o whitesur-install.sh
 
 # Step 2: Verify the checksum (compare against SHA256SUMS.txt in this repo)
 sha256sum whitesur-install.sh
@@ -90,10 +90,10 @@ For convenience, each script can also be run directly. **By using this method, y
 
 ```bash
 # Example: WhiteSur macOS theme
-curl -fsSL https://raw.githubusercontent.com/Naftaliro/zorinos-gnome-themes/v1.0.0/macos-themes/whitesur-macos-theme-install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Naftaliro/zorinos-gnome-themes/v1.2.0/macos-themes/whitesur-macos-theme-install.sh | bash
 ```
 
-Replace the path with any script from the table above. All URLs use the pinned `v1.0.0` release tag for reproducibility.
+Replace the path with any script from the table above. All URLs use the pinned `v1.2.0` release tag for reproducibility.
 
 ---
 

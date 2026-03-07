@@ -1,11 +1,9 @@
-# SHA-256 Checksums for zorinos-gnome-themes v1.1.0
-# Verify with: sha256sum -c SHA256SUMS.txt
-1ec20b22bf568b87ed986ba6a9411614fdff07b518b1ae32127b51c15cd516f7  macos-themes/colloid-material-theme-install.sh
-07cf8af636949f507219b83220cb2771f8fd10e00d53c9fefaf87877f444ca55  macos-themes/whitesur-macos-theme-install.sh
-221cccc69c696fca66e0b61af945f01b5ee52229cdf8338605e2b04f20067034  windows-themes/fluent-win11-theme-install.sh
-79e6e48e2df9f7a85116cab0f9e14ffc73c49313d11e520a6a907e9268fbab9d  windows-themes/we10x-win10-theme-install.sh
-19c181fa5dcb57e5d9e24b0bc2c1dfcceb6e5ff8f6dd5398bf70ac7131d25411  windows-themes/win11-theme-install.sh
-7009475f0e79e1b39eeecf2d2207e8e8310431ab8494e8c768d4e82045f3e167  linux-native-themes/catppuccin-theme-install.sh
-cd469fa5c4c6422a430d6ba0ae69c258a94434d81a6f78a44777d4b82bfbb026  linux-native-themes/graphite-theme-install.sh
-4723051cad56ff8d3a63394a1d469ecbd8708b94e30f858da541118e8520842f  linux-native-themes/lavanda-theme-install.sh
-74f420852d2aaee1e0da4ea0b8806cd66ce0fa68e89c42a6560b613c6b0d8896  linux-native-themes/orchis-theme-install.sh
+3699ee28e41b441e9e884ab8f7b84bf282fc47481bb95b24d309edbb705f01dc  macos-themes/whitesur-macos-theme-install.sh
+2d863c5955aa389b798c97e07bd668a3b1d40e1ec47ca38d4e93b715da908ee4  macos-themes/colloid-material-theme-install.sh
+71bf6b807bd5b1b8115f5a46f04718c97f7ca842e0fa203e64d9e5c47865d893  windows-themes/fluent-win11-theme-install.sh
+4f99e8e22e641a7729069777a12a1e214f2ce5684113ddd050426c4b722205da  windows-themes/win11-theme-install.sh
+13a45bd48b799673ddbf0311c987be212da0ab15989f755c3f4cef7b6bbb6e26  windows-themes/we10x-win10-theme-install.sh
+40b2d71265a3df3f410d2ff2741a183098e076162a44b87e562fd21cdabb3bea  linux-native-themes/orchis-theme-install.sh
+345b557ccf66c441344b4b927aa1a63bb8513524de7fdbc040939cd9954c446f  linux-native-themes/graphite-theme-install.sh
+4c0ee46498db85fce229fe809791f09b0cd2e3d0601aae602a25dc74c2bcd36c  linux-native-themes/lavanda-theme-install.sh
+ffe126512e69ae9a8a7c76b6100700e142d75c756be681edf2f90089038d0de4  linux-native-themes/catppuccin-theme-install.sh

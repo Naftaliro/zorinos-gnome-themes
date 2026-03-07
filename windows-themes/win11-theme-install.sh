@@ -83,13 +83,15 @@ header "STEP 2/5: Cloning Repositories"
 cd "${WORK_DIR}"
 
 info "Cloning Win11 GTK Theme..."
-git clone https://github.com/yeyushengfan258/Win11-gtk-theme.git --depth=1
+git clone https://github.com/yeyushengfan258/Win11-gtk-theme.git
+cd Win11-gtk-theme && git checkout 49e30de && cd ..
 
 info "Cloning Win11 Icon Theme..."
-git clone https://github.com/yeyushengfan258/Win11-icon-theme.git --depth=1
+git clone https://github.com/yeyushengfan258/Win11-icon-theme.git
+cd Win11-icon-theme && git checkout a5b460a && cd ..
 
 info "Cloning Fluent Icon Theme (for cursors)..."
-git clone https://github.com/vinceliuice/Fluent-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/Fluent-icon-theme.git --depth=1 --branch 2025-08-21
 
 ok "All repositories cloned."
 

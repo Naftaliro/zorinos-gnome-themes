@@ -65,11 +65,11 @@ header "STEP 2/6: Cloning Repositories"
 # ================================================================================
 cd "${WORK_DIR}"
 info "Cloning Lavanda GTK Theme..."
-git clone https://github.com/vinceliuice/Lavanda-gtk-theme.git --depth=1
+git clone https://github.com/vinceliuice/Lavanda-gtk-theme.git --depth=1 --branch 2024-04-28
 info "Cloning Tela Icon Theme..."
-git clone https://github.com/vinceliuice/Tela-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/Tela-icon-theme.git --depth=1 --branch 2025-02-10
 info "Cloning Graphite Cursors..."
-git clone https://github.com/vinceliuice/Graphite-cursors.git --depth=1
+git clone https://github.com/vinceliuice/Graphite-cursors.git --depth=1 --branch 2021-11-26
 ok "All repositories cloned."
 
 # ================================================================================

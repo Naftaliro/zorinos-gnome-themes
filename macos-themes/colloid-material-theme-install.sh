@@ -75,10 +75,10 @@ header "STEP 2/6: Cloning Colloid Repositories"
 cd "${WORK_DIR}"
 
 info "Cloning Colloid GTK Theme..."
-git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1
+git clone https://github.com/vinceliuice/Colloid-gtk-theme.git --depth=1 --branch 2025-07-31
 
 info "Cloning Colloid Icon Theme (includes cursors)..."
-git clone https://github.com/vinceliuice/Colloid-icon-theme.git --depth=1
+git clone https://github.com/vinceliuice/Colloid-icon-theme.git --depth=1 --branch 2025-07-19
 
 ok "All repositories cloned."
 
