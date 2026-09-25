@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in contributing to this project! Whether you want to add a new theme, fix a bug, or improve documentation, contributions are welcome.
+new themes, bug fixes and doc fixes are all welcome.
 
 ## How to Contribute
 
@@ -11,8 +11,8 @@ Thank you for your interest in contributing to this project! Whether you want to
    - `macos-themes/` for macOS-inspired themes
    - `windows-themes/` for Windows-inspired themes
    - `linux-native-themes/` for Linux-native themes
-3. Create a matching documentation guide (Markdown) in the same directory.
-4. Follow the conventions described below.
+3. Follow the conventions described below.
+4. Add it to the table in `README.md` and to `themes.json`.
 5. Open a **Pull Request** with a clear description of the theme.
 
 ### Script Conventions
@@ -49,7 +49,6 @@ All install scripts in this repository follow a consistent structure. Please mat
 ### File Naming
 
 - Scripts: `<theme-name>-theme-install.sh` (kebab-case)
-- Guides: `<theme-name>-theme-guide.md` (kebab-case)
 
 ### Testing
 
