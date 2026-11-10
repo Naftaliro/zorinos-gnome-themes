@@ -6,6 +6,11 @@ the scripts don't include any theme files. each one installs the dependencies, c
 
 if you want to switch between them without running scripts by hand, use [gnome-theme-switcher](https://github.com/Naftaliro/gnome-theme-switcher).
 
+<!-- screenshots: one per theme, named after the script. drop them in docs/screenshots/ and take away the comment markers
+![whitesur](docs/screenshots/whitesur.png)
+![catppuccin](docs/screenshots/catppuccin.png)
+-->
+
 ## the themes
 
 | # | theme | what you get | script |
